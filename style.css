@@ -63,7 +63,7 @@ dialog{color:var(--forest);background:linear-gradient(115deg,#F2EADB,#e5d7b9);bo
 /* Local photographic paper; stable coordinates and pigment density, not tiled dots. */
 .land{fill:#C4AC7C;stroke:#273a2d;stroke-opacity:.72;filter:blur(.10px)}
 .vegetation-pigment{fill:#5E6A58;pointer-events:none}
-.desert{fill:#C4AC7C;fill-opacity:.16}
+.desert{fill:url(#sand-dots);fill-opacity:1}
 #map-material{mix-blend-mode:multiply;pointer-events:none}
 .paper-fibers{opacity:.52;filter:grayscale(.65) contrast(1.28) brightness(1.15)}
 .paper-wear{opacity:.48;mix-blend-mode:multiply;filter:contrast(1.65) brightness(1.06)}
