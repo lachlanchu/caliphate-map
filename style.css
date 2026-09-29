@@ -73,7 +73,7 @@ dialog{color:var(--forest);background:linear-gradient(115deg,#F2EADB,#e5d7b9);bo
 .scroll-paper{background:#F2EADB;background-image:linear-gradient(90deg,#F2EADB80,#F2EADBbc 16%,#F2EADBb8 78%,#C4AC7C40),url('assets/textures/aged-paper-scan.jpg');background-size:100% 100%,660px auto;background-position:center,47% 44%;border-top:1px solid #9c815244;border-bottom:1px solid #9c815255;border-radius:0;clip-path:polygon(0 .3%,11% 0,29% .5%,43% .1%,58% .4%,73% 0,88% .3%,100% 0,100% 99.6%,87% 100%,66% 99.5%,48% 100%,29% 99.6%,12% 100%,0 99.7%)}
 .scroll-paper:before{content:'';position:absolute;inset:0;background:url('assets/textures/paper-wear.jpg') 65% 35% / 540px auto;mix-blend-mode:multiply;opacity:.18}
 .scroll-paper:after{content:'';position:absolute;inset:0;opacity:1;background:linear-gradient(90deg,#6B322315,transparent 7%,transparent 86%,#4A211825);box-shadow:inset 0 1px 2px #6b4c2930,inset 0 -1px 2px #6b4c2926}
-/* The pale wrapping sheet is distinct from the visible mahogany shaft. */
+/* An opaque paper cylinder encloses the shaft; wood emerges only at the ends. */
 .scroll-curl{top:-1px;bottom:-1px;width:27px;background:none;border-radius:0;box-shadow:none;filter:drop-shadow(3px 2px 3px #18282040)}
 .scroll-curl:before,.scroll-curl:after{display:none}
 .roller-core{position:absolute;top:-12px;bottom:-12px;left:9px;width:17px;overflow:hidden;border-radius:5px;background:#6B3223;box-shadow:inset 1px 0 2px #4A2118,inset -2px 0 3px #341710}
@@ -84,7 +84,7 @@ dialog{color:var(--forest);background:linear-gradient(115deg,#F2EADB,#e5d7b9);bo
 .roller-finial{position:absolute;left:4px;width:27px;height:19px;background:linear-gradient(90deg,#4A2118 0%,#6B3223 28%,#8B5036 43%,#743c29 57%,#4A2118 100%);border-radius:45%;box-shadow:inset 0 1px 1px #ad79503b,inset 0 -2px 2px #35171080,1px 1px 2px #18282055;clip-path:polygon(34% 0,65% 0,80% 9%,82% 27%,99% 35%,100% 60%,78% 68%,72% 89%,61% 100%,38% 100%,27% 89%,23% 68%,0 59%,1% 35%,18% 27%,20% 10%)}
 .finial-top{top:-26px}.finial-bottom{bottom:-26px;transform:rotate(180deg)}
 .roller-finial:after{content:'';position:absolute;inset:6px 0 7px;border-top:1px solid #b7825440;border-bottom:1px solid #32150d80;border-radius:40%}
-.paper-wrap{position:absolute;inset:0 6px 0 -1px;border-radius:45% / 1%;background:linear-gradient(90deg,#9c87595e 0%,#F2EADB80 26%,#F2EADBe0 48%,#ddc9a570 73%,#5a3c274d 100%),url('assets/textures/aged-paper-scan.jpg') 55% 32% / 350px auto;box-shadow:-2px 0 3px #4A211823,1px 0 1px #4A211835}
-.paper-wrap:before,.paper-wrap:after{content:'';position:absolute;left:0;right:0;height:3px;border:1px solid #8c764b66;border-radius:50%;background:#d9c7a2}
-.paper-wrap:before{top:-1px}.paper-wrap:after{bottom:-1px}
+.paper-wrap{position:absolute;inset:0 -4px 0 0;border-radius:50% / 1%;background-color:#F2EADB;background-image:linear-gradient(90deg,#8d744b80 0%,#c6af7d40 12%,#fff8e5a8 36%,#fff8e580 48%,#c4ac7c55 72%,#735531b8 100%),url('assets/textures/aged-paper-scan.jpg');background-position:center,55% 32%;background-size:100% 100%,350px auto;box-shadow:-3px 0 5px #4A211833,2px 0 3px #18282040,inset 1px 0 1px #fff8e580,inset -1px 0 2px #60442180}
+.paper-wrap:before,.paper-wrap:after{content:'';position:absolute;left:0;right:0;height:6px;border:1px solid #8c764b99;border-radius:50%;background:radial-gradient(ellipse 7px 1.3px at 56% 50%,#6B3223 65%,#4A2118 95%,transparent 100%),repeating-radial-gradient(ellipse at 56% 50%,#eaddbf 0 1px,#a78e62 1px 1.5px,#f2eadb 1.5px 3px);box-shadow:inset 0 1px 1px #fff8e570}
+.paper-wrap:before{top:-3px}.paper-wrap:after{bottom:-3px}
 @media(prefers-reduced-motion:reduce){.wood-grain,.roller-core:after{transition:none}}
