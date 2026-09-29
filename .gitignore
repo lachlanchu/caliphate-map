@@ -1,0 +1,21 @@
+# Local references, never published
+*.pdf
+atlas-texture-reference.png
+flag-reference.png
+*reference*.png
+screenshots/
+# OS, credentials, dependencies and temporary files
+.DS_Store
+.env
+.env.*
+!.env.example
+.codex/
+.agents/
+.aws/
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+*.log
+*.tmp
+*.bak

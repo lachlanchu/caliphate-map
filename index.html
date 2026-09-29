@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#182820">
+  <meta name="description" content="An interactive historical atlas of the Rashidun, Umayyad and Abbasid caliphates, with rivers, cities and agricultural regions.">
+  <title>The Early Caliphates — An interactive atlas</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/textures/aged-paper-scan.jpg">
+  <link rel="preload" as="image" href="assets/textures/paper-wear.jpg">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="assets/d3.min.js"></script><script defer src="app.js"></script><script defer src="interactions.js"></script>
+</head>
+<body class="intro-pending">
+<section id="intro" aria-labelledby="intro-title">
+  <div class="intro-content"><h1 id="intro-title">The Early Caliphates</h1><p>Drag, click, or hover to interact</p><button id="enter" disabled>enter</button><span id="intro-status" class="sr-only" role="status">Preparing the map</span></div>
+</section>
+<div id="experience">
+<main id="main-content" inert aria-hidden="true" tabindex="-1">
+  <header>
+    <div class="heading"><span class="eyebrow"><span class="orange-dot"></span> A HISTORICAL ATLAS</span><h1>The Early Caliphates<span class="title-period">.</span></h1></div>
+    <button id="sources-open" class="sources-button" aria-haspopup="dialog"><span aria-hidden="true">↗</span> Sources</button>
+  </header>
+  <section class="map-section" aria-label="Map of the early caliphates">
+    <div class="state-card" aria-live="polite" aria-atomic="true"><span class="state-number" id="state-number">01 / 03</span><h2 id="state-title">Rashidun Caliphate</h2><div class="state-meta"><span class="state-swatch"></span><span id="state-dates">632–661</span><span class="meta-divider">/</span><span id="state-extent">Extent at the end of the period</span></div></div>
+    <svg id="map" tabindex="0" viewBox="0 0 1400 650" role="group" aria-labelledby="map-title map-description"><title id="map-title">Rashidun Caliphate, approximate extent by 661</title><desc id="map-description">Explore four cities, four rivers, two deserts, and two agricultural areas by hovering, focusing, or tapping. Drag to pan; use the zoom buttons, scroll wheel, or pinch to magnify sites. With the map focused, press + or − to zoom and 0 to reset. Select a caliphate using the timeline below.</desc><defs>
+      <linearGradient id="fade-x"><stop offset="0" stop-color="black"/><stop offset=".07" stop-color="white"/><stop offset=".92" stop-color="white"/><stop offset="1" stop-color="black"/></linearGradient>
+      <linearGradient id="fade-y" x2="0" y2="1"><stop offset="0" stop-color="black"/><stop offset=".14" stop-color="white"/><stop offset=".84" stop-color="white"/><stop offset="1" stop-color="black"/></linearGradient>
+      <mask id="mask-x"><rect width="1400" height="650" fill="url(#fade-x)"/></mask><mask id="edge-fade" maskUnits="userSpaceOnUse" x="0" y="0" width="1400" height="650"><rect width="1400" height="650" fill="url(#fade-y)" mask="url(#mask-x)"/></mask>
+      <!-- Fixed material masks; no geography is displaced. -->
+      <filter id="wash-opacity" x="-10%" y="-15%" width="120%" height="130%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".009 .015" numOctaves="3" seed="19" result="wash"/><feDisplacementMap in="SourceGraphic" in2="wash" scale="90" xChannelSelector="R" yChannelSelector="G" result="unevenWash"/><feColorMatrix in="wash" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 .5 .4 .3 0 .2"/><feComposite in2="unevenWash" operator="in"/><feGaussianBlur stdDeviation="12"/></filter>
+      <mask id="vegetation-wash" maskUnits="userSpaceOnUse" x="-150" y="-75" width="1700" height="800"><g filter="url(#wash-opacity)" fill="white"><path d="M-160 -85H1560V185C1490 210 1430 151 1370 194S1240 224 1170 177S1050 252 960 205S830 236 750 186S650 225 570 201S430 291 350 227S160 231 70 260S-60 190-160 265Z"/><path d="M-160 620C130 590 240 675 430 631S710 711 940 660S1210 570 1560 592V740H-160Z"/></g></mask>
+      <mask id="ink-density" maskUnits="userSpaceOnUse" x="-150" y="-75" width="1700" height="800"><rect x="-150" y="-75" width="1700" height="800" fill="#c8c8c8"/><image href="assets/textures/paper-wear.jpg" x="-150" y="-75" width="1700" height="800" preserveAspectRatio="none" opacity=".55"/></mask>
+      <radialGradient id="quiet-feature" gradientUnits="objectBoundingBox"><stop stop-color="#747474"/><stop offset=".5" stop-color="#969696"/><stop offset="1" stop-color="white"/></radialGradient>
+      <mask id="weathering-strength" maskUnits="userSpaceOnUse" x="-150" y="-75" width="1700" height="800"><rect x="-150" y="-75" width="1700" height="800" fill="white"/><ellipse cx="790" cy="320" rx="125" ry="160" fill="url(#quiet-feature)"/><ellipse cx="660" cy="365" rx="55" ry="145" fill="url(#quiet-feature)"/><ellipse cx="1135" cy="305" rx="60" ry="140" fill="url(#quiet-feature)"/></mask>
+      <linearGradient id="pennant-paper" x1="0" x2="1"><stop stop-color="#C4AC7C"/><stop offset=".3" stop-color="#F2EADB"/><stop offset=".75" stop-color="#e5d7b9"/><stop offset="1" stop-color="#F2EADB"/></linearGradient>
+      <pattern id="farm-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(32)"><rect width="5" height="5" fill="#354536" fill-opacity=".90"/><path d="M0 0V5" stroke="#C4AC7C" stroke-width="1.6" stroke-opacity=".7"/></pattern>
+      <clipPath id="land-clip"></clipPath>
+      <clipPath id="map-crop"><rect width="1400" height="650"/></clipPath>
+      <clipPath id="flag-ground"><rect x="-6" y="-64" width="68" height="64"/></clipPath>
+
+    </defs><g id="map-viewport" mask="url(#edge-fade)" clip-path="url(#map-crop)"><g id="map-pan"><g id="geography"></g><g id="map-labels"></g><g id="hit-targets"></g><g id="feature-flag" aria-hidden="true" pointer-events="none"><g clip-path="url(#flag-ground)"><g class="flag-riser"><g class="pennant" transform="scale(.82)"><path d="M0 0V-50" stroke="#F2EADB" stroke-width="1.3"/><path d="M1 -47Q17 -42 47 -30Q23 -30 1 -15Z" fill="url(#pennant-paper)" fill-opacity=".95" stroke="#9E391A" stroke-width=".65"/></g></g></g></g></g></g></svg>
+    <div class="zoom-controls" role="group" aria-label="Map zoom">
+      <button id="zoom-out" aria-label="Zoom out" title="Zoom out (−)">−</button>
+      <button id="zoom-reset" aria-label="Reset map view" title="Reset zoom and position (0)"><span id="zoom-level">100%</span></button>
+      <button id="zoom-in" aria-label="Zoom in" title="Zoom in (+)">+</button>
+    </div>
+    <div id="load-error" hidden>Map data could not load. Run this folder with a local web server, then reload.</div>
+    <div class="map-bottom"><div class="legend" aria-label="Map legend"><span><i class="key-city"></i>City</span><span><i class="key-river"></i>River</span><span><i class="key-desert"></i>Desert</span><span><i class="key-farm"></i>Agricultural area</span></div><span class="map-note">NORTH UP <span>↑</span> <b>·</b> MERCATOR</span></div>
+  </section>
+  <section class="timeline" aria-label="Select a caliphate">
+    <div class="timeline-heading"><span class="timeline-hint">Select a period to explore <span aria-hidden="true">↔</span></span></div>
+    <div class="slider-wrap"><div class="timeline-line"></div><div id="slider-progress"></div><input id="period-slider" type="range" min="0" max="2" step="1" value="0" aria-label="Caliphate" aria-valuetext="Rashidun, 632–661"><div class="nodes"><button class="node active" data-state="0" aria-pressed="true"><span class="node-dot"></span><span class="node-name">Rashidun</span><span class="node-date">632–661</span></button><button class="node" data-state="1" aria-pressed="false"><span class="node-dot"></span><span class="node-name">Umayyad</span><span class="node-date">661–750</span></button><button class="node" data-state="2" aria-pressed="false"><span class="node-dot"></span><span class="node-name">Abbasid</span><span class="node-date">750–1258 <small>· shown 786–809</small></span></button></div></div>
+  </section>
+  <footer><span>Approximate territorial extents; transitions are illustrative.</span><span class="copyright">©2026 Lachlan Chu</span></footer>
+</main>
+<aside id="feature-banner" aria-hidden="true"><div class="scroll-sheet"><div class="scroll-paper"></div><div class="banner-content"><span id="feature-type" class="eyebrow"></span><h2 id="feature-name"></h2><div class="banner-rule"></div><p id="feature-description"></p></div></div><div class="scroll-curl" aria-hidden="true"><div class="roller-core"><span class="wood-grain"></span></div><span class="roller-finial finial-top"></span><span class="roller-finial finial-bottom"></span><div class="paper-wrap"></div></div></aside>
+</div>
+<dialog id="sources-dialog" aria-labelledby="sources-title">
+  <div class="dialog-top"><h2 id="sources-title">Sources</h2><button id="sources-close" aria-label="Close sources">×</button></div>
+  <ul class="bibliography">
+    <li>Ruthven, Malise, with Azim Nanji. (2004). <a href="https://www.emaanlibrary.com/wp-content/uploads/2015/06/Historical-Atlas-Of-Islam-.pdf" target="_blank" rel="noopener"><em>Historical Atlas of the Islamic World</em></a>, pp. 16–17, 25, 28–29, 36–37, 66–67, 142.</li>
+    <li>Natural Earth. (n.d.). <a href="https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_land.geojson" target="_blank" rel="noopener"><em>Land</em></a>. 1:50 million scale [GeoJSON dataset].</li>
+    <li>Natural Earth. (n.d.). <a href="https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_rivers_lake_centerlines.geojson" target="_blank" rel="noopener"><em>Rivers and Lake Centerlines</em></a>. 1:50 million scale [GeoJSON dataset].</li>
+    <li>Natural Earth. (n.d.). <a href="https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_lakes.geojson" target="_blank" rel="noopener"><em>Lakes</em></a>. 1:50 million scale [GeoJSON dataset].</li>
+    <li>Internet Archive Book Images. (1902). <a href="https://commons.wikimedia.org/wiki/File:Blank_page,_brown_paper_texture_(14802136533).jpg" target="_blank" rel="noopener"><em>Blank page, brown paper texture</em></a>. From <em>Armide</em>, Henry Lemoine &amp; Cie [Digitized paper]. Public domain.</li>
+    <li>Hodan, George. (n.d.). <a href="https://www.publicdomainpictures.net/en/view-image.php?image=64189&amp;picture=old-paper-texture" target="_blank" rel="noopener"><em>Old Paper Texture</em></a> [Photograph]. Public domain.</li>
+    <li>Mapbox. (n.d.). <a href="https://www.mapbox.com/maps/dark" target="_blank" rel="noopener"><em>Mapbox Dark</em></a> [Map style].</li>
+    <li>D3 contributors. (n.d.). <a href="https://d3js.org/" target="_blank" rel="noopener"><em>D3.js</em></a> (Version 7) [JavaScript library].</li>
+  </ul>
+</dialog>
+</body>
+</html>
