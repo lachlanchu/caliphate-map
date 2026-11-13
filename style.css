@@ -88,3 +88,9 @@ dialog{color:var(--forest);background:linear-gradient(115deg,#F2EADB,#e5d7b9);bo
 .paper-wrap:before,.paper-wrap:after{content:'';position:absolute;left:0;right:0;height:6px;border:1px solid #8c764b99;border-radius:50%;background:radial-gradient(ellipse 7px 1.3px at 56% 50%,#6B3223 65%,#4A2118 95%,transparent 100%),repeating-radial-gradient(ellipse at 56% 50%,#eaddbf 0 1px,#a78e62 1px 1.5px,#f2eadb 1.5px 3px);box-shadow:inset 0 1px 1px #fff8e570}
 .paper-wrap:before{top:-3px}.paper-wrap:after{bottom:-3px}
 @media(prefers-reduced-motion:reduce){.wood-grain,.roller-core:after{transition:none}}
+
+/* Companion navigation; map and entrance rules are unchanged. */
+.header-actions{display:flex;gap:10px;align-items:center}
+a.sources-button{text-decoration:none;display:inline-block}
+a.sources-button:focus-visible{outline:2px solid var(--red);outline-offset:6px}
+@media(max-width:550px){.header-actions{gap:6px;flex-shrink:0}.header-actions .sources-button{max-width:none;white-space:nowrap;font-size:9px;padding:8px 7px}.header-actions .sources-button span{margin-right:3px}}

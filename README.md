@@ -68,3 +68,11 @@ The scroll uses a lighter rendering of the same paper. Its moving edge combines 
 The material revision passed the interaction, atlas and zoom suites in Chrome, plus texture decoding/anchoring and reversible wood-grain checks. The map at normal size and the open scroll were visually inspected.
 
 Publication excludes local reference images, PDFs, credentials, caches and temporary files through `.gitignore`; these files remain on your computer. All runtime paths are relative and the browser suites also passed under `/caliphate-map/`.
+
+## Companion page: Ismāʿīlī cosmology
+
+[The Order of Creation](https://lachlanchu.github.io/caliphate-map/cosmology/) is a companion for Intro to Islamic Civilization, Columbia University, Fall 2026. Its selectable HTML diagram, explanation and bibliography are in `cosmology/index.html`; `cosmology/cosmology.css` supplies responsive and US Letter print layouts. It is fully static, with no JavaScript, and reuses the atlas’s local paper texture and favicon.
+
+Use the local-server command above, then open **http://127.0.0.1:8000/cosmology/**. The atlas header also links to the companion after entering the map. GitHub Pages publishes the new directory from `main` at the repository root.
+
+Run `python3 scripts/cosmology_check.py` with Python Playwright and installed Google Chrome while the local server is active (`CHROME_PATH` and `MAP_URL` override the defaults). It checks the root and a temporary `/caliphate-map/` copy at desktop and touch sizes, navigation, connectors, sphere legend, assets, overflow and the explanation’s word count. It saves desktop/mobile screenshots and `screenshots/cosmology.pdf` in the ignored `screenshots/` directory. It starts and stops its own temporary subpath server.
