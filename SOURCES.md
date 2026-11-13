@@ -52,3 +52,15 @@ The palette was supplied by the user. Broad irregular sage/parchment pigment was
 The supplied `atlas-texture-reference.png` was visually inspected for aged paper and uneven printing, but is not embedded in the site. Its cartography and decorative mountains are not used.
 
 The local blank 1902 paper scan from Internet Archive Book Images and George Hodan’s blank worn-paper photograph were visually inspected and used as layered rendering textures. Complete source links, rights statements and asset details are in [assets/textures/ATTRIBUTION.md](assets/textures/ATTRIBUTION.md). The mahogany grain is an original lightweight vector texture. Displacement affects only the broad color mask, never coastline, river or historical frontier geometry.
+
+## Companion page: Ismāʿīlī cosmology
+
+1. van Dalen, Elaine. "Lecture 9.2: Ismāʿīlī Theology." Intro to Islamic Civilization, Columbia University, November 4, 2026. Lecture slides.
+
+1. al-Ṭūsī, Naṣīr al-Dīn. *Paradise of Submission: A Medieval Treatise on Ismaili Thought (Rawḍa-yi taslīm)*. Edited and translated by S. J. Badakhchani. London: I.B. Tauris in association with the Institute of Ismaili Studies, 2005. Quoted from Lecture 9.2.
+
+1. Nāṣir Khusraw. *Knowledge and Liberation: A Treatise on Philosophical Theology*. A new edition and English translation of the *Gushāyish wa rahāyish* by Faquir M. Hunzai, with an introduction and commentary by Parviz Morewedge. London: I.B. Tauris in association with the Institute of Ismaili Studies, 1998.
+
+1. De Smet, Daniel. "Ismāʿīlī Theology." In *The Oxford Handbook of Islamic Theology*, edited by Sabine Schmidtke, 313–24. Oxford: Oxford University Press, 2014. https://doi.org/10.1093/oxfordhb/9780199696703.013.010
+
+1. Walker, Paul E. "The Ismāʿīlīs." In *The Cambridge Companion to Arabic Philosophy*, edited by Peter Adamson and Richard C. Taylor, 72–91. Cambridge: Cambridge University Press, 2005. https://doi.org/10.1017/CCOL0521817439.005
